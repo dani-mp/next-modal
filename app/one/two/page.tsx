@@ -6,7 +6,6 @@ export default function Page({
 }: {
   searchParams: { modal?: string };
 }) {
-  console.log(modal);
   return (
     <>
       <h1>Hola, two</h1>
