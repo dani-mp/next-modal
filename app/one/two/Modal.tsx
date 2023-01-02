@@ -1,20 +1,21 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import ReactModal from "react-modal";
 
-export default function Modal({ value }: { value?: string }) {
+export default function Modal() {
+  const modal = useSearchParams().get("modal");
   const router = useRouter();
   const pathname = usePathname();
   return (
     <ReactModal
-      isOpen={value !== undefined}
+      isOpen={!!modal}
       onRequestClose={() => {
         if (!pathname) return;
         router.push(pathname);
       }}
     >
-      <h2>{`Selected: ${value}`}</h2>
+      <h2>{`Selected: ${modal}`}</h2>
     </ReactModal>
   );
 }

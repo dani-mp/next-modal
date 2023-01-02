@@ -1,11 +1,7 @@
 import Link from "next/link";
 import Modal from "./Modal";
 
-export default function Page({
-  searchParams: { modal },
-}: {
-  searchParams: { modal?: string };
-}) {
+export default function Page() {
   return (
     <>
       <h1>Hola, two</h1>
@@ -16,7 +12,7 @@ export default function Page({
           </li>
         ))}
       </ul>
-      <Modal value={modal}></Modal>
+      <Modal />
     </>
   );
 }
